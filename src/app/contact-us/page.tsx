@@ -1,4 +1,5 @@
-import { EnvelopeIcon, MapPinIcon, PaperAirplaneIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import ContactDetails from '@/lib/Presentation/Component/ContactDetails'
+import { PaperAirplaneIcon } from '@heroicons/react/20/solid'
 
 export default function ContactUs() {
   return (
@@ -11,20 +12,7 @@ export default function ContactUs() {
           </p>
         </div>
         <div className="flex w-full flex-col items-center justify-center space-y-5">
-          <div className="flex w-full flex-grow flex-row items-stretch justify-between space-x-3">
-            <div className="flex w-full max-w-[10rem] flex-col items-center justify-center space-y-2 break-all rounded-lg bg-[#423C3C] p-2 text-center text-amber-400 dark:bg-gray-200 dark:text-black">
-              <MapPinIcon className="h-5 w-5" />
-              <p className="text-xs">Miñoza St., Cogon, Compostela, Cebu</p>
-            </div>
-            <div className="flex w-full max-w-[10rem] flex-col items-center justify-center space-y-2 break-all rounded-lg bg-amber-400 p-2 text-center text-black">
-              <PhoneIcon className="h-5 w-5" />
-              <p className="text-xs">+63 945 425 0787</p>
-            </div>
-            <div className="flex w-full max-w-[10rem] flex-col items-center justify-center space-y-2 break-all rounded-lg bg-[#423C3C] p-2 text-center text-amber-400 dark:bg-gray-200 dark:text-black">
-              <EnvelopeIcon className="h-5 w-5" />
-              <p className="text-xs">minozascatering@gmail.com</p>
-            </div>
-          </div>
+          <ContactDetails />
           <div className="flex w-full flex-col items-center space-y-5 rounded-lg bg-white p-5 text-black shadow-lg">
             <div className="flex w-full flex-col space-y-2">
               <label htmlFor="name" className="text-xs font-bold">

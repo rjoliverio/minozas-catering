@@ -1,9 +1,11 @@
 import React from 'react'
 import './globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import ThemeProvider from '@/lib/Presentation/Provider/ThemeProvider'
 import Header from '@/lib/Presentation/Component/Header'
+import { ToastContainer } from 'react-toastify'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
             {children}
           </div>
+          <ToastContainer />
         </ThemeProvider>
       </body>
     </html>
