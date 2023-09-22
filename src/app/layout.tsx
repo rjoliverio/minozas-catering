@@ -1,6 +1,8 @@
 import React from 'react'
 import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
+import 'yet-another-react-lightbox/styles.css'
+import 'yet-another-react-lightbox/plugins/captions.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import ThemeProvider from '@/lib/Presentation/Provider/ThemeProvider'
