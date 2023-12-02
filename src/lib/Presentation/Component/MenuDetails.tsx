@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 'use client'
 
-import { menu as menuData } from '@/lib/App/Utils/Json'
 import { Menu } from '@/lib/Domain/Entity'
 import { StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
 import { StarIcon as StarIcon } from '@heroicons/react/24/solid'
@@ -9,9 +8,12 @@ import MenuSlide from './MenuSlide'
 import { MouseEvent, useState } from 'react'
 import { typeColorMapper } from '@/lib/App/Utils/Helper/TypeColorMapper'
 
-export default function MenuDetails() {
+type Props = {
+  menu: Menu[]
+}
+export default function MenuDetails({ menu: menuData }: Props) {
   const [isOpen, setOpen] = useState<boolean>(false)
-  const [menu, setMenu] = useState<Menu>(menuData[0])
+  const [menu, setMenu] = useState<Menu | null>(menuData[0] || null)
 
   const handleMenuClicked = (item: Menu) => {
     setOpen(true)
@@ -28,7 +30,7 @@ export default function MenuDetails() {
   return (
     <>
       {menuData.map((item) => {
-        const color = typeColorMapper(item.type)
+        const color = typeColorMapper(item.category.name)
         return (
           <div key={item.id} className="flex flex-col items-center space-y-2">
             <div
@@ -57,7 +59,9 @@ export default function MenuDetails() {
                   </div>
                   <p className="text-xs text-black">{item.rate.toFixed(1)}</p>
                 </div>
-                <div className={`rounded-full ${color} px-1.5 py-1 text-xs`}>{item.type}</div>
+                <div className={`rounded-full ${color} px-1.5 py-1 text-xs`}>
+                  {item.category.name}
+                </div>
               </div>
               <p className="line-clamp-2 w-full text-sm text-gray-500 dark:text-gray-300">
                 {item.description}

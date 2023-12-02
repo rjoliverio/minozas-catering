@@ -1,7 +1,11 @@
+import { GET_MENU_QUERY } from '@/lib/App/Utils/GraphQL/Queries/MenuQuery'
+import { Menu as MenuType } from '@/lib/Domain/Entity'
+import { client } from '@/lib/Infrastructure/Client'
 import MenuDetails from '@/lib/Presentation/Component/MenuDetails'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
-export default function Menu() {
+export default async function Menu() {
+  const menu: { findAll: MenuType[] } = await client.request(GET_MENU_QUERY)
   return (
     <div className="m-auto flex h-full w-full max-w-5xl flex-col items-center justify-center px-5 py-6">
       <div className="flex w-full flex-col items-center justify-center space-y-5">
@@ -34,7 +38,7 @@ export default function Menu() {
       </div>
       <div className="my-8 w-full bg-gray-300 p-[0.5px]"></div>
       <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <MenuDetails />
+        <MenuDetails menu={menu.findAll} />
       </div>
     </div>
   )
