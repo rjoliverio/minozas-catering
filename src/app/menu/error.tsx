@@ -7,7 +7,7 @@ type Props = {
   error: Error
 }
 
-const MenuError = ({ error }: Props) => {
+const MenuPageError = ({ error }: Props) => {
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.error(error)
@@ -37,4 +37,4 @@ const MenuError = ({ error }: Props) => {
   )
 }
 
-export default MenuError
+export default MenuPageError

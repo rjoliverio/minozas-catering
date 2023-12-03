@@ -1,6 +1,6 @@
 'use client'
 
-export default function MenuLoading() {
+export default function MenuPageLoading() {
   return (
     <div className="m-auto flex h-full w-full max-w-5xl flex-col items-center justify-center px-5 py-6">
       <div className="flex w-full animate-pulse flex-col items-center justify-center space-y-5 ">
