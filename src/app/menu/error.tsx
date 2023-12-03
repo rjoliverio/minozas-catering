@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useEffect } from 'react'
 
 type Props = {
@@ -23,15 +22,15 @@ const MenuPageError = ({ error }: Props) => {
         </p>
 
         <p className="mt-4 text-gray-500 dark:text-gray-500">
-          Something went wrong. Try again later, or return home to start from the beginning.
+          Something went wrong. Try again or return home to start from the beginning.
         </p>
 
-        <Link
-          href="/"
+        <a
+          href="/menu"
           className="mt-6 inline-block rounded bg-amber-400 px-5 py-3 text-sm font-medium text-white hover:bg-amber-500 focus:outline-none focus:ring"
         >
-          Go Back Home
-        </Link>
+          Try Again
+        </a>
       </div>
     </div>
   )
